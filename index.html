@@ -154,10 +154,24 @@
     .social a:hover {
       text-decoration: underline;
     }
+
+    /* רספונסיביות */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .store-buttons img { height: 48px; }
+      .cta { flex-direction: column; }
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- וידאו רקע -->
+  <video autoplay muted loop playsinline id="bg-video"
+    style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: 0; object-fit: cover; filter: brightness(0.15);">
+    <source src="https://www.videvo.net/videvo_files/converted/2016_08/preview/160721_06_Summer_4k_029.mp491551.webm" type="video/webm">
+  </video>
+
   <header>
     <h1>Zaki</h1>
     <p class="subtitle">הבינה שתגרום לביטוח לאומי להזיע.</p>
@@ -248,5 +262,6 @@
       }
     });
   </script>
+
 </body>
 </html>
