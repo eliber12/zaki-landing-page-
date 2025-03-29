@@ -5,15 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zaki – תודעה זמינה</title>
 
-  <!-- Fonts + Meta -->
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="icon" href="favicon.ico"/>
   <meta name="theme-color" content="#0d1117"/>
   <meta property="og:title" content="Zaki – תודעה זמינה"/>
-  <meta property="og:description" content="AI חברתי. רגשי. מדויק. ברוך הבא לעולם שבו זכויות הן זמינות."/>
+  <meta property="og:description" content="Zaki משנה את כללי המשחק. AI חברתי. מלווה אישי. אמת זמינה."/>
   <meta property="og:image" content="https://zaki-landing-page.vercel.app/og_image.png"/>
 
-  <!-- Styles -->
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
@@ -32,20 +30,11 @@
       z-index: 1;
     }
 
-    video.bg-video {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      object-fit: cover;
-      z-index: 0;
-      opacity: 0.07;
-    }
-
     header {
       position: relative;
       z-index: 2;
       text-align: center;
-      padding: 8rem 2rem 3rem;
+      padding: 6rem 2rem 3rem;
     }
 
     h1 {
@@ -95,7 +84,7 @@
     section {
       position: relative;
       z-index: 2;
-      padding: 5rem 2rem;
+      padding: 4rem 2rem;
       max-width: 850px;
       margin: auto;
       text-align: center;
@@ -114,10 +103,6 @@
       margin-bottom: 2rem;
     }
 
-    .demo {
-      margin-top: 3rem;
-    }
-
     .demo input {
       padding: 0.9rem;
       width: 90%;
@@ -128,12 +113,26 @@
       color: #fff;
       font-size: 1rem;
       margin-bottom: 1rem;
+      text-align: center;
     }
 
-    .demo .response {
-      font-style: italic;
+    .response {
+      font-style: normal;
       color: #58d3af;
       font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    .store-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .store-buttons img {
+      height: 60px;
     }
 
     footer {
@@ -152,48 +151,23 @@
       text-decoration: none;
     }
 
-    .light-follower {
-      position: fixed;
-      top: 0; left: 0;
-      width: 120px;
-      height: 120px;
-      background: radial-gradient(circle, rgba(16,163,127,0.15) 0%, transparent 80%);
-      pointer-events: none;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 3;
-      transition: transform 0.1s ease;
+    .social a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
-  <!-- וידאו רקע -->
-  <video class="bg-video" autoplay muted loop playsinline>
-    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4" />
-  </video>
-
-  <!-- אפקט אור עכבר -->
-  <div class="light-follower" id="light"></div>
-
-  <!-- תוכן -->
   <header>
     <h1>Zaki</h1>
-    <p class="subtitle">ברוך הבא לעוזר שגורם לבירוקרטיה להישמע כמו שיר ערש.</p>
+    <p class="subtitle">הבינה שתגרום לביטוח לאומי להזיע.</p>
     <div class="cta">
-      <a href="#">התחל עכשיו</a>
-      <a href="#">איך זה עובד?</a>
+      <a href="#demo">שאל שאלה</a>
+      <a href="#download">הורד את האפליקציה</a>
     </div>
   </header>
 
-  <section>
-    <h2>AI שמרגיש אותך</h2>
-    <p>
-      Zaki לא רק שומע – הוא מקשיב.  
-      הוא מזהה את הסיפור שלך, ונותן לך גישה לאמת שמגיעה לך.  
-      <br/>ברגש. בשקט. בדיוק.
-    </p>
-
+  <section id="demo">
     <h2>דמו חי – שאל שאלה:</h2>
     <div class="demo">
       <input id="questionInput" type="text" placeholder="מה מגיע לי אם אני עובד נכה?" />
@@ -201,39 +175,58 @@
     </div>
   </section>
 
+  <section id="download">
+    <h2>הורד את Zaki – תן לבינה לעבוד בשבילך</h2>
+    <p>האפליקציה זמינה עכשיו בחנויות:</p>
+    <div class="store-buttons">
+      <a href="https://play.google.com/store/apps/details?id=com.example.zaki" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"/>
+      </a>
+      <a href="https://apps.apple.com/app/id1234567890" target="_blank">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"/>
+      </a>
+    </div>
+  </section>
+
   <footer>
     <p>ליצירת קשר או שיתוף פעולה: <a href="mailto:support@zaki.ai">support@zaki.ai</a></p>
     <div class="social">
-      <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">YouTube</a>
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">YouTube</a>
     </div>
     <p>Zaki – זכויות. שקוף. פשוט.</p>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // אור עוקב אחרי העכבר
-    const light = document.getElementById("light");
-    document.addEventListener("mousemove", e => {
-      light.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-
-    // דמו חי
     const questionInput = document.getElementById("questionInput");
     const responseBox = document.getElementById("responseBox");
-    questionInput.addEventListener("keypress", function (e) {
+
+    questionInput.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
-        const q = questionInput.value.toLowerCase();
-        let response = "בודק זכויות...";
-        if (q.includes("נכה")) {
-          response = "בהתאם לנתונים שלך, ייתכן ואתה זכאי לנקודות זיכוי במס, קצבה חודשית, וסיוע בדיור.";
-        } else if (q.includes("ילד") || q.includes("חינוך")) {
-          response = "קיימת זכאות להנגשה חינוכית, תמיכה סוציאלית, וסיוע ממשלתי נוסף.";
+        const val = questionInput.value.toLowerCase();
+        let answer = "";
+
+        if (val.includes("נכה")) {
+          answer = "קצבה, נקודות זיכוי, ואולי גם פטור מהבוס. רוצה לדעת בדיוק?";
+        } else if (val.includes("ילד")) {
+          answer = "תמיכה חינוכית, סייעת, ואולי גם טיפולים על חשבון המדינה.";
+        } else if (val.includes("דיור")) {
+          answer = "סיוע בשכר דירה, הנחה בארנונה, והזדמנות להרגיש בבית.";
         } else {
-          response = "Zaki עדיין לומד את השאלה הזו. נסה לנסח מחדש או לבדוק קטגוריה קרובה.";
+          answer = "שאלה טובה! אבל למה לא לנסות את Zaki בעצמו?";
         }
-        responseBox.innerText = response;
+
+        responseBox.innerHTML = `
+          <p>${answer}</p>
+          <a href="https://play.google.com/store/apps/details?id=com.example.zaki" target="_blank"
+             style="display:inline-block; margin-top:1rem; padding:0.6rem 1.2rem; background:#10A37F; color:#0d1117;
+                    border-radius:8px; font-weight:bold; text-decoration:none;">
+            הורד את Zaki, נשמה
+          </a>
+        `;
       }
     });
   </script>
 </body>
-  </html>
+</html>
