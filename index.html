@@ -5,164 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zaki – לא רק סוכן, חבר</title>
 
+  <!-- Fonts + CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/style_zaki_28.css" />
+  <link rel="stylesheet" href="style_zaki_28.css" />
   <link rel="icon" href="favicon.ico"/>
+  
+  <!-- Meta -->
   <meta name="theme-color" content="#0d1117"/>
-  <meta property="og:title" content="Zaki – תודעה זמינה"/>
+  <meta property="og:title" content="Zaki – לא רק סוכן,חבר"/>
   <meta property="og:description" content="Zaki משנה את כללי המשחק. AI חברתי. מלווה אישי. אמת זמינה."/>
   <meta property="og:image" content="https://zaki-landing-page.vercel.app/og_image.png"/>
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      font-family: 'Assistant', sans-serif;
-      background-color: #0d1117;
-      color: #f0f6fc;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(45deg, rgba(16,163,127,0.05), transparent 70%);
-      z-index: 1;
-    }
-
-    header {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 6rem 2rem 3rem;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: #10A37F;
-      text-shadow: 0 0 20px rgba(16,163,127,0.5);
-      animation: pulse 4s infinite;
-    }
-
-    @keyframes pulse {
-      0% { letter-spacing: 1px; }
-      50% { letter-spacing: 3px; }
-      100% { letter-spacing: 1px; }
-    }
-
-    .subtitle {
-      font-size: 1.4rem;
-      margin-top: 1rem;
-      color: #c9d1d9;
-    }
-
-    .cta {
-      margin-top: 2.5rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .cta a {
-      background: #161b22;
-      padding: 0.9rem 1.8rem;
-      border: 1px solid #30363d;
-      border-radius: 12px;
-      color: #f0f6fc;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s ease;
-    }
-
-    .cta a:hover {
-      background: #10A37F;
-      color: #0d1117;
-      transform: scale(1.06);
-    }
-
-    section {
-      position: relative;
-      z-index: 2;
-      padding: 4rem 2rem;
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #10A37F;
-      margin-bottom: 1.2rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #c9d1d9;
-      margin-bottom: 2rem;
-    }
-
-    .demo input {
-      padding: 0.9rem;
-      width: 90%;
-      max-width: 500px;
-      border-radius: 8px;
-      border: none;
-      background: #161b22;
-      color: #fff;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .response {
-      font-style: normal;
-      color: #58d3af;
-      font-size: 1.1rem;
-      margin-top: 1rem;
-    }
-
-    .store-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
-
-    .store-buttons img {
-      height: 60px;
-    }
-
-    footer {
-      position: relative;
-      z-index: 2;
-      padding: 4rem 1rem;
-      background-color: #0d1117;
-      color: #8b949e;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    .social a {
-      color: #10A37F;
-      margin: 0 0.4rem;
-      text-decoration: none;
-    }
-
-    .social a:hover {
-      text-decoration: underline;
-    }
-
-    /* רספונסיביות */
-    @media (max-width: 768px) {
-      h1 { font-size: 2rem; }
-      .store-buttons img { height: 48px; }
-      .cta { flex-direction: column; }
-    }
-  </style>
 </head>
 
 <body>
@@ -173,6 +25,7 @@
     <source src="https://www.videvo.net/videvo_files/converted/2016_08/preview/160721_06_Summer_4k_029.mp491551.webm" type="video/webm">
   </video>
 
+  <!-- HEADER -->
   <header>
     <h1>Zaki</h1>
     <p class="subtitle">הבינה שתגרום לביטוח לאומי להזיע.</p>
@@ -182,6 +35,7 @@
     </div>
   </header>
 
+  <!-- DEMO -->
   <section id="demo">
     <h2>דמו חי – שאל שאלה:</h2>
     <div class="demo">
@@ -190,6 +44,7 @@
     </div>
   </section>
 
+  <!-- DOWNLOAD -->
   <section id="download">
     <h2>הורד את Zaki – תן לבינה לעבוד בשבילך</h2>
     <p>האפליקציה זמינה עכשיו בחנויות:</p>
@@ -203,8 +58,9 @@
     </div>
   </section>
 
+  <!-- CONTENT SECTIONS -->
   <section>
-    <h2>יותר מעוזר. חבר</h2>
+    <h2>יותר מעוזר. חבר.</h2>
     <p>Zaki הוא לא עוד צ'אט בינה. הוא מראה שהמערכת לא חייבת להיות מסובכת. הוא כאן להזכיר – שאתה לא צריך להבין את כל הזכויות. רק שמישהו יבין אותך.</p>
   </section>
 
@@ -223,6 +79,7 @@
     <p>האפליקציה פתוחה. השאלות חופשיות. והתשובות מדויקות. Zaki לא שואל למה אתה כאן – הוא רק בודק מה עוד מגיע לך.</p>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>ליצירת קשר או שיתוף פעולה: <a href="mailto:eliber.dev@gmail.com">eliber.dev@gmail.com</a></p>
     <div class="social">
@@ -231,6 +88,7 @@
     <p>Zaki – זכויות. שקוף. פשוט.</p>
   </footer>
 
+  <!-- SCRIPT -->
   <script>
     const questionInput = document.getElementById("questionInput");
     const responseBox = document.getElementById("responseBox");
@@ -255,7 +113,7 @@
           <a href="https://play.google.com/store/apps/details?id=com.example.zaki" target="_blank"
              style="display:inline-block; margin-top:1rem; padding:0.6rem 1.2rem; background:#10A37F; color:#0d1117;
                     border-radius:8px; font-weight:bold; text-decoration:none;">
-            הורד את Zaki, 
+            הורד את Zaki
           </a>
         `;
       }
