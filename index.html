@@ -5,36 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zaki – יודע מה שמגיע לך</title>
 
-  <!-- עיצוב ואייקונים -->
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet" />
 
-  <!-- אנימציות & גלילה -->
+  <meta property="og:title" content="Zaki – יודע מה שמגיע לך" />
+  <meta property="og:description" content="AI חברתי. זכויות. פשוט. Zaki משנה את הדרך בה ישראלים ניגשים למידע שמגיע להם." />
+  <meta property="og:image" content="https://zaki-landing-page.vercel.app/og_image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="he_IL" />
+
   <style>
     html { scroll-behavior: smooth; }
     .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
-
-  <!-- Meta לשיתוף -->
-  <meta property="og:title" content="Zaki – יודע מה שמגיע לך" />
-  <meta property="og:description" content="העוזר החכם שמנגיש זכויות לאנשים אמיתיים. בדיוק בזמן." />
-  <meta property="og:image" content="https://zaki-landing-page.vercel.app/og_image.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="he_IL" />
 </head>
+
 <body onload="revealOnScroll()">
 
   <header class="hero fade-in">
-    <img src="https://example.com/zaki_logo.png" alt="לוגו Zaki" class="logo" />
+    <img src="https://example.com/zaki_logo.png" alt="Zaki Logo" class="logo" />
     <h1>Zaki – יודע מה שמגיע לך.</h1>
-    <p>העוזר החכם שמנגיש זכויות לאנשים אמיתיים. בשפה פשוטה. בדיוק בזמן.</p>
+    <p class="subtitle">AI חברתי. עוזר אמיתי. משנה מציאות.</p>
     <div class="cta-buttons">
-      <a href="#" class="btn">הורדה ל-Android</a>
-      <a href="#" class="btn">הורדה ל-iPhone</a>
+      <a href="#" class="btn">הורדה ל־Android</a>
+      <a href="#" class="btn">הורדה ל־iPhone</a>
     </div>
     <div class="scroll-down">▼</div>
   </header>
@@ -43,10 +41,11 @@
     <section class="features fade-in">
       <h2>למה Zaki?</h2>
       <ul>
-        <li>AI מותאם אישית לפרופיל שלך</li>
-        <li>תשובות אמינות עם הפניות רשמיות</li>
-        <li>עברית טבעית. UX פשוט. חווית GPT מלאה</li>
-        <li>מבוסס טוקנים – מודל חדשני להנגשת ידע</li>
+        <li><strong>עוזר אישי מבוסס GPT</strong> שמבין אותך בעברית טבעית.</li>
+        <li><strong>התאמה חכמה</strong> לפי פרופיל אישי, סוג תעסוקה, מגדר ומאפיינים.</li>
+        <li><strong>תשובות מהימנות</strong> מגובות בקישורים רשמיים – ללא מידע שגוי.</li>
+        <li><strong>גישה מיידית</strong> לזכויות בתחומי בריאות, שיקום, מסים, דיור ועוד.</li>
+        <li><strong>מנגנון טוקנים הוגן</strong> – לשימוש חינמי או פרמיום לפי צורך.</li>
       </ul>
     </section>
 
@@ -57,10 +56,30 @@
         <a href="#"><img src="https://example.com/screenshot2.jpg" alt="מסך אפליקציה 2" /></a>
       </div>
     </section>
+
+    <section class="about fade-in">
+      <h2>איך זה עובד?</h2>
+      <ol>
+        <li>נרשמים ובונים פרופיל מותאם אישית תוך שניות.</li>
+        <li>שואלים כל שאלה על זכויות – בעברית, כמו בצ'אט.</li>
+        <li>Zaki סורק, מנתח, ומחזיר תשובה מותאמת אישית עם מקורות רשמיים.</li>
+        <li>ניתן לשמור, לשתף, או לצבור טוקנים לעוד אינטראקציות.</li>
+      </ol>
+    </section>
+
+    <section class="vision fade-in">
+      <h2>Zaki הוא לא רק אפליקציה</h2>
+      <p>
+        זה חזון. זה שינוי. זו דרך חדשה לחבר אזרחים לזכויות שלהם, מבלי לעבור דרך מוקדים, טפסים, ובירוקרטיה.
+        <br/>
+        זו נגישות דיגיטלית. זו אמינות. זו חמלה עם קוד.
+      </p>
+    </section>
   </main>
 
   <footer class="footer fade-in">
-    <p>שאלות? שיתופי פעולה? דברו איתנו: <a href="mailto:support@zaki.ai">support@zaki.ai</a></p>
+    <p>רוצים לשתף פעולה? לשלב את Zaki בארגון שלכם? דברו איתנו:</p>
+    <p><a href="mailto:support@zaki.ai">support@zaki.ai</a></p>
     <div class="social">
       <a href="#">Facebook</a> |
       <a href="#">Instagram</a> |
@@ -69,7 +88,6 @@
     <p>Zaki – זכויות. שקוף. פשוט.</p>
   </footer>
 
-  <!-- JavaScript לאפקט גלילה -->
   <script>
     function revealOnScroll() {
       const elements = document.querySelectorAll('.fade-in');
