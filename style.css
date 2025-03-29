@@ -1,67 +1,106 @@
-/* Zaki – Tech Minimal UI */
+/* Zaki – Tech Minimal UI 2025 */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #0d1117;
-  color: #f0f6fc;
+  font-family: 'Roboto', sans-serif;
+  background-color: #0a0c10; /* כחול-שחור עמוק למראה טכנולוגי */
+  color: #e6edf3; /* טקסט בהיר לניגודיות גבוהה */
   direction: rtl;
   text-align: center;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 a {
-  color: #10A37F;
+  color: #00d4ff; /* תכלת זוהר וטכנולוגי */
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 a:hover {
+  color: #66e5ff; /* גוון בהיר יותר להבלטה */
   text-decoration: underline;
 }
 
 header.hero {
-  padding: 4rem 1rem 3rem;
-  background-color: #0d1117;
-  border-bottom: 1px solid #21262d;
+  padding: 5rem 1rem 4rem;
+  background: linear-gradient(180deg, #0a0c10 0%, #1a1c22 100%); /* שיפוע עדין למראה עמוק */
+  border-bottom: 1px solid #30363d;
+  position: relative;
+  overflow: hidden;
+}
+
+header.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1), transparent 50%); /* אפקט זוהר עדין */
+  z-index: 0;
 }
 
 .logo {
-  width: 80px;
-  margin-bottom: 1.5rem;
-  border-radius: 12px;
+  width: 100px;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* צל רך לעומק */
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
-  font-size: 2rem;
-  margin: 0 0 0.5rem;
-  color: #f0f6fc;
+  font-size: 2.5rem;
+  margin: 0 0 1rem;
+  color: #e6edf3;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* צל לטקסט למראה מודגש */
+  position: relative;
+  z-index: 1;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-buttons .btn {
-  display: inline-block;
-  margin: 0.5rem;
-  padding: 0.7rem 1.4rem;
-  background-color: #161b22;
-  color: #f0f6fc;
-  border: 1px solid #30363d;
+  padding: 0.8rem 1.6rem;
+  background-color: #00d4ff; /* תכלת זוהר לכפתורים */
+  color: #0a0c10; /* ניגודיות עם הרקע */
+  border: none;
   border-radius: 8px;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .cta-buttons .btn:hover {
-  background-color: #21262d;
+  background-color: #66e5ff; /* גוון בהיר יותר להבלטה */
+  transform: translateY(-2px); /* תנועה קלה למעלה */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 
 section {
-  padding: 3rem 1rem;
-  border-bottom: 1px solid #21262d;
+  padding: 4rem 1rem;
+  background-color: #0a0c10;
+  border-bottom: 1px solid #30363d;
 }
 
 h2 {
-  color: #10A37F;
-  margin-bottom: 1.5rem;
-  font-size: 1.6rem;
+  color: #00d4ff; /* תכלת זוהר לכותרות */
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .features ul,
@@ -69,38 +108,79 @@ h2 {
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 700px;
   text-align: right;
 }
 
 .features li,
 .about li {
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed #30363d;
-  font-size: 1.1rem;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #30363d;
+  transition: transform 0.2s ease;
+}
+
+.features li:hover,
+.about li:hover {
+  transform: translateX(-5px); /* תנועה קלה לשיפור האינטראקטיביות */
 }
 
 .carousel {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .carousel img {
-  width: 160px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.carousel img:hover {
+  transform: scale(1.05); /* הגדלה קלה להבלטה */
 }
 
 .footer {
-  padding: 2rem 1rem;
-  background-color: #0d1117;
+  padding: 3rem 1rem;
+  background-color: #0a0c10;
   font-size: 0.9rem;
-  color: #8b949e;
+  color: #8b949e; /* אפור בהיר לטקסט משני */
 }
 
 .footer a {
-  color: #10A37F;
+  color: #00d4ff;
+}
+
+.footer a:hover {
+  color: #66e5ff;
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  header.hero {
+    padding: 3rem 1rem 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .carousel img {
+    width: 160px;
+  }
 }
