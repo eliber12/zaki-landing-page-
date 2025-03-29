@@ -4,11 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zaki – יודע מה שמגיע לך</title>
+
+  <!-- עיצוב ואייקונים -->
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- אנימציות & גלילה -->
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+
+  <!-- Meta לשיתוף -->
+  <meta property="og:title" content="Zaki – יודע מה שמגיע לך" />
+  <meta property="og:description" content="העוזר החכם שמנגיש זכויות לאנשים אמיתיים. בדיוק בזמן." />
+  <meta property="og:image" content="https://zaki-landing-page.vercel.app/og_image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="he_IL" />
 </head>
-<body>
-  <header class="hero">
+<body onload="revealOnScroll()">
+
+  <header class="hero fade-in">
     <img src="https://example.com/zaki_logo.png" alt="לוגו Zaki" class="logo" />
     <h1>Zaki – יודע מה שמגיע לך.</h1>
     <p>העוזר החכם שמנגיש זכויות לאנשים אמיתיים. בשפה פשוטה. בדיוק בזמן.</p>
@@ -16,31 +36,52 @@
       <a href="#" class="btn">הורדה ל-Android</a>
       <a href="#" class="btn">הורדה ל-iPhone</a>
     </div>
+    <div class="scroll-down">▼</div>
   </header>
 
   <main>
-    <section class="features">
-      <h2>מה הופך את Zaki לייחודי?</h2>
+    <section class="features fade-in">
+      <h2>למה Zaki?</h2>
       <ul>
-        <li>שואל שאלות כמו בן אדם – עונה כמו מומחה.</li>
-        <li>מתאים מידע מדויק לפרופיל שלך.</li>
-        <li>מבוסס GPT עם גישה למקורות רשמיים בלבד.</li>
-        <li>עובד בעברית, בלי בירוקרטיה ובלי רעש.</li>
+        <li>AI מותאם אישית לפרופיל שלך</li>
+        <li>תשובות אמינות עם הפניות רשמיות</li>
+        <li>עברית טבעית. UX פשוט. חווית GPT מלאה</li>
+        <li>מבוסס טוקנים – מודל חדשני להנגשת ידע</li>
       </ul>
     </section>
 
-    <section class="screenshots">
-      <h2>איך זה נראה בפנים?</h2>
+    <section class="screenshots fade-in">
+      <h2>הצצה פנימה</h2>
       <div class="carousel">
-        <a href="https://example.com/feature1"><img src="https://example.com/screenshot1.jpg" alt="מסך אפליקציה 1" /></a>
-        <a href="https://example.com/feature2"><img src="https://example.com/screenshot2.jpg" alt="מסך אפליקציה 2" /></a>
+        <a href="#"><img src="https://example.com/screenshot1.jpg" alt="מסך אפליקציה 1" /></a>
+        <a href="#"><img src="https://example.com/screenshot2.jpg" alt="מסך אפליקציה 2" /></a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>יש לכם שאלות? <a href="mailto:support@zaki.ai">support@zaki.ai</a></p>
+  <footer class="footer fade-in">
+    <p>שאלות? שיתופי פעולה? דברו איתנו: <a href="mailto:support@zaki.ai">support@zaki.ai</a></p>
+    <div class="social">
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">YouTube</a>
+    </div>
     <p>Zaki – זכויות. שקוף. פשוט.</p>
   </footer>
+
+  <!-- JavaScript לאפקט גלילה -->
+  <script>
+    function revealOnScroll() {
+      const elements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => observer.observe(el));
+    }
+  </script>
+
 </body>
 </html>
