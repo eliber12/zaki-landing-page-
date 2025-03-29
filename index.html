@@ -2,21 +2,19 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zaki – אתה לא לבד</title>
 
   <!-- Fonts + Meta -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="favicon.ico" />
-  <meta property="og:title" content="Zaki – אתה לא לבד"/>
-  <meta property="og:description" content="AI אנושי. מלווה אישי. שקט טכנולוגי שעובד בשבילך."/>
-  <meta property="og:image" content="https://zaki-landing-page.vercel.app/og_image.png"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:locale" content="he_IL"/>
+  <meta property="og:title" content="Zaki – אתה לא לבד" />
+  <meta property="og:description" content="Zaki משנה את כללי המשחק. AI חברתי. מלווה אישי. אמת זמינה." />
+  <meta property="og:image" content="https://zaki-landing-page.vercel.app/og_image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="he_IL" />
 
-  <!-- Canvas Background -->
+  <!-- Styles -->
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
@@ -29,105 +27,101 @@
       direction: rtl;
     }
 
-    canvas {
+    body::before {
+      content: '';
       position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 20%, rgba(16,163,127,0.1), transparent 60%),
+                  radial-gradient(circle at 70% 80%, rgba(255,255,255,0.04), transparent 60%);
       z-index: -1;
+      animation: moveBG 30s linear infinite;
+    }
+
+    @keyframes moveBG {
+      0% { background-position: 0 0, 100% 100%; }
+      100% { background-position: 100% 0, 0 100%; }
     }
 
     header {
       text-align: center;
-      padding: 7rem 1rem 3rem;
-    }
-
-    .logo {
-      width: 90px;
-      margin-bottom: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(16,163,127,0.3);
+      padding: 6rem 2rem 3rem;
     }
 
     h1 {
-      font-size: 2.7rem;
+      font-size: 3rem;
       color: #10A37F;
-      margin-bottom: 1rem;
-      animation: glow 3s infinite alternate;
+      animation: glow 2s ease-in-out infinite alternate;
     }
 
     @keyframes glow {
-      from { text-shadow: 0 0 5px #10A37F; }
-      to { text-shadow: 0 0 20px #10A37F; }
+      from { text-shadow: 0 0 10px #10A37F; }
+      to { text-shadow: 0 0 30px #10A37F; }
     }
 
-    .typed {
-      font-size: 1.3rem;
+    .subtitle {
+      font-size: 1.4rem;
       color: #c9d1d9;
-      min-height: 2.5rem;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: .15em solid #10A37F;
-      animation: typing 4s steps(40, end), blink .75s step-end infinite;
+      margin-top: 1rem;
+      max-width: 600px;
+      margin-inline: auto;
     }
 
-    @keyframes typing { from { width: 0 } to { width: 100% } }
-    @keyframes blink { from, to { border-color: transparent } 50% { border-color: #10A37F } }
+    .hero-buttons {
+      margin-top: 2.5rem;
+    }
 
     .btn {
       background: #161b22;
       color: #f0f6fc;
-      padding: 0.75rem 1.8rem;
-      margin: 1rem;
-      border-radius: 10px;
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      border-radius: 12px;
       border: 1px solid #30363d;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
 
     .btn:hover {
       background: #10A37F;
       color: #0d1117;
-      transform: scale(1.06);
+      transform: scale(1.07);
     }
 
     section {
-      text-align: center;
-      padding: 5rem 1rem;
-      max-width: 800px;
+      padding: 5rem 2rem;
+      max-width: 900px;
       margin: auto;
+      text-align: center;
     }
 
     h2 {
-      font-size: 1.8rem;
       color: #10A37F;
+      font-size: 2rem;
       margin-bottom: 1.5rem;
     }
 
-    ul, ol {
-      text-align: right;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    li {
-      margin-bottom: 1.2rem;
+    p {
       font-size: 1.1rem;
+      line-height: 1.8;
+      color: #c9d1d9;
+      margin-bottom: 2rem;
     }
 
     .quote {
-      font-size: 1.3rem;
-      margin-top: 2rem;
+      font-style: italic;
       color: #58d3af;
+      font-size: 1.2rem;
+      margin-top: 2rem;
     }
 
     footer {
+      padding: 3rem 1rem;
       background-color: #0d1117;
-      padding: 4rem 1rem;
       color: #8b949e;
-      text-align: center;
       font-size: 0.9rem;
+      text-align: center;
     }
 
     .social a {
@@ -135,42 +129,67 @@
       margin: 0 0.5rem;
       text-decoration: none;
     }
+
+    .social a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
 <body>
-  <canvas id="bg"></canvas>
 
   <header>
-    <img src="https://example.com/zaki_logo.png" alt="Zaki Logo" class="logo" />
     <h1>Zaki</h1>
-    <p class="typed">אתה לא צריך לדעת הכול – רק לדעת מה שמגיע לך.</p>
-    <div>
-      <a href="#" class="btn">להתחיל</a>
-      <a href="#" class="btn">מה זה Zaki?</a>
+    <p class="subtitle">
+      אתה לא צריך לדעת הכול.  
+      <br/>
+      רק לדעת מה שמגיע לך.  
+      <br/>
+      Zaki הוא לא עוד בינה – הוא מצפן חברתי.
+    </p>
+    <div class="hero-buttons">
+      <a href="#" class="btn">התחל עכשיו</a>
+      <a href="#" class="btn">למה Zaki?</a>
     </div>
   </header>
 
   <section>
-    <h2>AI שלא רק מדבר – מקשיב</h2>
-    <p>Zaki נבנה כדי לעשות סדר. לא לחפש בגוגל. לא להתייאש בטפסים.  
-    אלא לקבל תשובה אנושית, בגובה העיניים, בזמן אמת.</p>
-    <p class="quote">"הבינה הופכת לאמפתיה כשהיא יודעת לשאול עבורך את השאלות הנכונות."</p>
+    <h2>ברוכים הבאים לעידן של ודאות</h2>
+    <p>
+      הגיע הזמן לשים סוף לבלבול, ל״תחפש לבד״, ל״תשלח פנייה״.  
+      Zaki הוא תודעה זמינה. שואלים אותו שאלה –  
+      והוא עונה כמו חבר, מגובה כמו עו״ד, מדבר כמו בן אדם.
+    </p>
+    <p class="quote">
+      "ידע הוא לא פריבילגיה – הוא זכות בסיסית."
+    </p>
   </section>
 
   <section>
     <h2>איך זה עובד?</h2>
-    <ol>
-      <li>מגדירים פרופיל קצר – נכות? תעסוקה? מצב משפחתי?</li>
-      <li>שואלים מה שרלוונטי: דיור, בריאות, שיקום, מיסים ועוד</li>
-      <li>Zaki מחזיר תשובה מבוססת חוק, פרשנות וגיבוי רשמי</li>
-      <li>לא מבין? שואל שוב. צריך עזרה? מחבר אותך הלאה</li>
-    </ol>
+    <p>
+      יוצרים פרופיל אישי. שואלים מה שמטריד.  
+      מקבלים תשובה מדויקת, רלוונטית, בגיבוי החוק.  
+      הכל בעברית. הכל ברגש. הכל בלחיצת כפתור.
+    </p>
+  </section>
+
+  <section>
+    <h2>מהפכה שקטה. תודעה רועמת.</h2>
+    <p>
+      Zaki לא שואל אותך למה הגעת.  
+      הוא כבר יודע מה חסר לך.  
+      הוא לא רק פותר בעיות – הוא משנה את הדרך שבה אתה מסתכל על זכויות.
+    </p>
+    <p class="quote">
+      "זה לא AI. זו אינטואיציה מתקדמת."  
+    </p>
   </section>
 
   <footer>
-    <p>לשאלות, שיתופי פעולה, או פשוט כדי להגיד שלום:</p>
-    <p><a href="mailto:support@zaki.ai">support@zaki.ai</a></p>
+    <p>רוצים להצטרף למהפכה?  
+    <br/>
+    <a href="mailto:support@zaki.ai">support@zaki.ai</a></p>
     <div class="social">
       <a href="#">Facebook</a> |
       <a href="#">Instagram</a> |
@@ -179,42 +198,5 @@
     <p>Zaki – זכויות. שקוף. פשוט.</p>
   </footer>
 
-  <script>
-    // רקע חלקיקים דינאמי
-    const canvas = document.getElementById("bg");
-    const ctx = canvas.getContext("2d");
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-
-    let particles = [];
-
-    for (let i = 0; i < 60; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 1,
-        dx: Math.random() - 0.5,
-        dy: Math.random() - 0.5
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "#10A37F";
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      }
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-  </script>
 </body>
 </html>
