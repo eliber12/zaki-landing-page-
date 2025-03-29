@@ -1,0 +1,71 @@
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: 'Assistant', sans-serif;
+  background-color: #0D1B2A;
+  color: #fff;
+  direction: rtl;
+  text-align: center;
+}
+
+.hero {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #3EDBF0, #EF3E9E);
+  color: #fff;
+}
+
+.logo {
+  max-width: 140px;
+  margin-bottom: 1rem;
+}
+
+.cta-buttons .btn {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #fff;
+  color: #0D1B2A;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.features, .screenshots, .about {
+  padding: 3rem 1rem;
+  background-color: #0D1B2A;
+}
+
+.features ul, .about ol {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: auto;
+}
+
+.features li, .about li {
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.carousel img {
+  max-width: 250px;
+  margin: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.footer {
+  padding: 2rem 1rem;
+  background-color: #09131F;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #3EDBF0;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
