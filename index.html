@@ -1,173 +1,154 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" prefix="og: https://ogp.me/ns#">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Zaki – העוזר החכם שמנגיש זכויות לאנשים אמיתיים, בשפה פשוטה ובדיוק בזמן." />
-  <title>Zaki – יודע מה שמגיע לך</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Zaki – העוזר החכם שמנגיש זכויות לאנשים אמיתיים, בשפה פשוטה ובדיוק בזמן.">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a">
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+  <title>Zaki – העתיד של הזכויות שלך</title>
 
-  <!-- קישור לעיצוב -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Preload חשובים -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap">
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Open Graph לשיתוף מתקדם -->
+  <meta property="og:title" content="Zaki – העתיד של הזכויות שלך">
+  <meta property="og:description" content="העוזר החכם שמנגיש זכויות לאנשים אמיתיים.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image:alt" content="טכנולוגיה חכמה לעתיד">
+  <meta property="og:type" content="website">
 
-  <!-- Open Graph לשיתוף ברשתות חברתיות -->
-  <meta property="og:title" content="Zaki – יודע מה שמגיע לך" />
-  <meta property="og:description" content="העוזר החכם שמנגיש זכויות לאנשים אמיתיים. בדיוק בזמן." />
-  <meta property="og:image" content="https://zaki-landing-page.vercel.app/og_image.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="he_IL" />
-
-  <!-- Structured Data ל-SEO -->
+  <!-- Structured Data מתקדם -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Zaki",
-    "description": "העוזר החכם שמנגיש זכויות לאנשים אמיתיים. בשפה פשוטה. בדיוק בזמן.",
-    "applicationCategory": "Utilities",
-    "operatingSystem": "Android, iOS"
+    "description": "העוזר החכם שמנגיש זכויות לאנשים אמיתיים.",
+    "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "ILS"
+    }
   }
   </script>
 </head>
 <body>
+  <!-- Custom Element עם Shadow DOM -->
+  <zaki-header role="banner">
+    <template shadowrootmode="open">
+      <style>
+        :host {
+          display: block;
+          position: sticky;
+          top: 0;
+          background: linear-gradient(135deg, #1e90ff, #00b7eb);
+          padding: 1rem;
+          z-index: 1000;
+        }
+        nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        ul {
+          display: flex;
+          gap: 1rem;
+          list-style: none;
+        }
+        a {
+          color: white;
+          text-decoration: none;
+          font-family: 'Rubik', sans-serif;
+        }
+      </style>
+      <nav aria-label="ניווט ראשי">
+        <button is="menu-toggle" aria-label="פתח תפריט" aria-expanded="false">☰</button>
+        <ul role="navigation">
+          <li><a href="#features">תכונות</a></li>
+          <li><a href="#screenshots">מסכים</a></li>
+          <li><a href="#how-it-works">איך זה עובד</a></li>
+          <li><a href="#contact">צור קשר</a></li>
+        </ul>
+      </nav>
+    </template>
+  </zaki-header>
 
-  <!-- כותרת עליונה עם ניווט דביק -->
-  <header class="hero" role="banner">
-    <nav class="sticky-nav" aria-label="ניווט ראשי">
-      <button class="menu-toggle" aria-label="פתח תפריט ניווט" aria-expanded="false" aria-controls="nav-menu">
-        <span class="hamburger-icon">☰</span>
-      </button>
-      <ul id="nav-menu" class="nav-list" role="navigation">
-        <li><a href="#features" aria-label="תכונות של Zaki">תכונות</a></li>
-        <li><a href="#screenshots" aria-label="צילומי מסך מהאפליקציה">מסכים</a></li>
-        <li><a href="#how-it-works" aria-label="איך Zaki עובד">איך זה עובד</a></li>
-        <li><a href="#contact" aria-label="צור קשר עם Zaki">צור קשר</a></li>
-      </ul>
-    </nav>
-    <div class="hero-content">
-      <img src="zaki_logo_main.png" alt="לוגו של Zaki" class="logo" loading="lazy" />
-      <h1>Zaki – יודע מה שמגיע לך</h1>
-      <p>העוזר החכם שמנגיש זכויות לאנשים אמיתיים. בשפה פשוטה. בדיוק בזמן.</p>
-      <div class="cta-buttons">
-        <a href="#" class="btn primary-btn" role="button" aria-label="הורד את Zaki ל-Android">הורדה ל-Android</a>
-        <a href="#" class="btn primary-btn" role="button" aria-label="הורד את Zaki ל-iPhone">הורדה ל-iPhone</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- תוכן ראשי -->
+  <!-- תוכן ראשי עם תמונות רלוונטיות -->
   <main>
-    <!-- תכונות -->
-    <section id="features" class="features" aria-labelledby="features-heading">
-      <h2 id="features-heading">מה הופך את Zaki לייחודי?</h2>
-      <ul class="features-list" role="list">
-        <li>שואל שאלות כמו בן אדם – עונה כמו מומחה.</li>
-        <li>מתאים מידע מדויק לפרופיל שלך.</li>
-        <li>מבוסס GPT עם גישה למקורות רשמיים בלבד.</li>
-        <li>עובד בעברית, בלי בירוקרטיה ובלי רעש.</li>
-        <li>מערכת טוקנים חכמה – חינם למי שמבין.</li>
-      </ul>
+    <section class="hero" style="--parallax-speed: 0.5;">
+      <picture>
+        <source srcset="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" media="(min-width: 800px)">
+        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="טכנולוגיה חכמה" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+      <h1>Zaki – העתיד של הזכויות שלך</h1>
+      <p>העוזר החכם שמנגיש זכויות לאנשים אמיתיים.</p>
     </section>
 
-    <!-- ביקורות -->
-    <section class="testimonials" aria-labelledby="testimonials-heading">
-      <h2 id="testimonials-heading">מה אומרים עלינו?</h2>
-      <div class="testimonials-grid">
-        <blockquote class="testimonial">
-          <p>"Zaki שינה את חיי! עכשיו אני יודע בדיוק מה מגיע לי."</p>
-          <cite>– יוסי, תל אביב</cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>"סוף סוף מישהו שעושה סדר בזכויות שלי. תודה, Zaki!"</p>
-          <cite>– רחל, ירושלים</cite>
-        </blockquote>
+    <section id="screenshots" aria-labelledby="screenshots-heading">
+      <h2 id="screenshots-heading">צילומי מסך</h2>
+      <div class="carousel" role="region" aria-roledescription="גלריית תמונות">
+        <figure>
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" media="(min-width: 800px)">
+            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="מסך אפליקציה מודרני" loading="lazy" decoding="async">
+          </picture>
+          <figcaption>מסך ראשי</figcaption>
+        </figure>
       </div>
     </section>
 
-    <!-- צילומי מסך -->
-    <section id="screenshots" class="screenshots" aria-labelledby="screenshots-heading">
-      <h2 id="screenshots-heading">איך זה נראה בפנים?</h2>
-      <div class="carousel" role="region" aria-roledescription="גלריית תמונות" tabindex="0">
-        <button class="carousel-control prev" aria-label="תמונה קודמת">❮</button>
-        <div class="carousel-inner">
-          <figure class="carousel-item active">
-            <img src="screenshots_android_1.jpg" alt="מסך ראשי של אפליקציית Zaki" loading="lazy" />
-            <figcaption>מסך ראשי</figcaption>
-          </figure>
-          <figure class="carousel-item">
-            <img src="screenshots_android_2.jpg" alt="דוגמה לשאילתה ותשובה ב-Zaki" loading="lazy" />
-            <figcaption>שאלה ותשובה</figcaption>
-          </figure>
-        </div>
-        <button class="carousel-control next" aria-label="תמונה הבאה">❯</button>
-      </div>
-    </section>
-
-    <!-- איך זה עובד -->
-    <section id="how-it-works" class="how-it-works" aria-labelledby="how-it-works-heading">
-      <h2 id="how-it-works-heading">איך זה עובד?</h2>
-      <div class="accordion">
-        <details open>
-          <summary>יוצרים פרופיל אישי תוך פחות מדקה</summary>
-          <p>תהליך פשוט ומהיר שמאפשר לך להתחיל מיד.</p>
-        </details>
-        <details>
-          <summary>שואלים שאלה בכל תחום</summary>
-          <p>Zaki מבין את השאלה ומחפש את המידע הרלוונטי בבריאות, דיור, עבודה ועוד.</p>
-        </details>
-        <details>
-          <summary>מקבלים תשובה מדויקת ומגובה</summary>
-          <p>תשובות מבוססות על מקורות רשמיים ומעודכנים.</p>
-        </details>
-        <details>
-          <summary>שומרים או משתפים את התשובה</summary>
-          <p>אפשר לשמור לשימוש עתידי או לצבור טוקנים לשאלות נוספות.</p>
-        </details>
-      </div>
-      <button class="video-btn" aria-label="צפה בסרטון הדגמה של Zaki" role="button">צפה בסרטון הדגמה</button>
-      <dialog class="video-modal" aria-labelledby="video-modal-title">
-        <h3 id="video-modal-title" hidden>סרטון הדגמה של Zaki</h3>
-        <video controls aria-describedby="video-desc">
-          <source src="zaki_demo.mp4" type="video/mp4" />
-          <p id="video-desc">הדפדפן שלך לא תומך בסרטון זה.</p>
-        </video>
-        <button class="close-modal" aria-label="סגור את הסרטון">✕</button>
+    <section id="how-it-works" inert>
+      <h2>איך זה עובד?</h2>
+      <dialog open aria-labelledby="dialog-title">
+        <h3 id="dialog-title" hidden>הסבר אינטראקטיבי</h3>
+        <p>לחץ עליי כדי להתחיל!</p>
+        <form method="dialog">
+          <button>סגור</button>
+        </form>
       </dialog>
     </section>
   </main>
 
   <!-- כותרת תחתונה -->
-  <footer id="contact" class="footer" role="contentinfo">
-    <p>יש לכם שאלות, הצעות או שיתופי פעולה?</p>
-    <p><a href="mailto:support@zaki.ai" aria-label="שלח אימייל ל-support@zaki.ai">support@zaki.ai</a></p>
-    <div class="social-links">
-      <a href="#" aria-label="עקוב אחרי Zaki בפייסבוק"><img src="facebook_icon.png" alt="פייסבוק" loading="lazy" /></a>
-      <a href="#" aria-label="עקוב אחרי Zaki באינסטגרם"><img src="instagram_icon.png" alt="אינסטגרם" loading="lazy" /></a>
-      <a href="#" aria-label="צפה בערוץ היוטיוב של Zaki"><img src="youtube_icon.png" alt="יוטיוב" loading="lazy" /></a>
-    </div>
-    <p>Zaki – זכויות. שקוף. פשוט.</p>
+  <footer role="contentinfo">
+    <p>צור קשר: <a href="mailto:support@zaki.ai">support@zaki.ai</a></p>
   </footer>
 
-  <!-- סקריפטים -->
-  <script>
-    // פתיחה וסגירה של מודל הווידאו
-    const videoBtn = document.querySelector('.video-btn');
-    const modal = document.querySelector('.video-modal');
-    const closeBtn = document.querySelector('.close-modal');
+  <!-- סקריפטים מתקדמים -->
+  <script type="module">
+    // Web Component מותאם אישית
+    class ZakiHeader extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        const template = this.querySelector('template');
+        this.shadowRoot.append(template.content.cloneNode(true));
+      }
+    }
+    customElements.define('zaki-header', ZakiHeader);
 
-    videoBtn.addEventListener('click', () => modal.showModal());
-    closeBtn.addEventListener('click', () => modal.close());
+    // Custom Element לטוגל תפריט
+    class MenuToggle extends HTMLButtonElement {
+      connectedCallback() {
+        this.addEventListener('click', () => {
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+        });
+      }
+    }
+    customElements.define('menu-toggle', MenuToggle, { extends: 'button' });
 
-    // תפריט ניווט למובייל
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('#nav-menu');
-    menuToggle.addEventListener('click', () => {
-      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !isExpanded);
-      navMenu.classList.toggle('open');
-    });
+    // Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
   </script>
 </body>
-      </html>
+</html>
