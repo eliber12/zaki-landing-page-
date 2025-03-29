@@ -3,39 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zaki – לא רק סוכן, חבר</title>
-
-  <!-- Fonts + External CSS -->
+  <title>Zaki 2.5 – תודעה זמינה</title>
+  <meta name="theme-color" content="#0d1117"/>
+  <meta property="og:title" content="Zaki – AI חברתי"/>
+  <meta property="og:description" content="Zaki לא רק מקשיב. הוא מבין. מלווה אישי. אמת זמינה."/>
+  <meta property="og:image" content="https://zaki-landing-page.vercel.app/og_image.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style_zaki_28.css" />
   <link rel="icon" href="favicon.ico"/>
 
-  <!-- Meta -->
-  <meta name="theme-color" content="#0d1117"/>
-  <meta property="og:title" content="Zaki – תודעה זמינה"/>
-  <meta property="og:description" content="Zaki משנה את כללי המשחק. AI חברתי. מלווה אישי. אמת זמינה."/>
-  <meta property="og:image" content="https://zaki-landing-page.vercel.app/og_image.png"/>
+  <style>
+    :root {
+      --primary: #10A37F;
+      --bg: #0d1117;
+      --text: #f0f6fc;
+      --muted: #c9d1d9;
+      --border: #30363d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Assistant', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      direction: rtl;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    video#bg-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.07);
+    }
+
+    header {
+      text-align: center;
+      padding: 6rem 2rem 3rem;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      color: var(--primary);
+      text-shadow: 0 0 18px rgba(16,163,127,0.6);
+      animation: glow 4s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 12px rgba(16,163,127,0.3); }
+      50% { text-shadow: 0 0 25px rgba(16,163,127,0.8); }
+    }
+
+    .subtitle {
+      margin-top: 1rem;
+      font-size: 1.4rem;
+      color: var(--muted);
+    }
+
+    .cta {
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cta a {
+      background: #161b22;
+      padding: 1rem 2rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cta a:hover {
+      background: var(--primary);
+      color: var(--bg);
+      transform: scale(1.05);
+    }
+
+    section {
+      max-width: 850px;
+      margin: auto;
+      padding: 4rem 2rem;
+      text-align: center;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .demo input {
+      padding: 1rem;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 10px;
+      background: #161b22;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      text-align: center;
+      box-shadow: 0 0 8px rgba(16,163,127,0.2);
+    }
+
+    .response {
+      color: #58d3af;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    .store-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .store-buttons img {
+      height: 60px;
+      transition: transform 0.2s ease;
+    }
+
+    .store-buttons img:hover {
+      transform: scale(1.07);
+    }
+
+    footer {
+      text-align: center;
+      color: #8b949e;
+      padding: 4rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .cta { flex-direction: column; }
+      .store-buttons img { height: 50px; }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- וידאו רקע -->
-  <video autoplay muted loop playsinline id="bg-video"
-    style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: 0; object-fit: cover; filter: brightness(0.15);">
+  <!-- רקע וידאו -->
+  <video autoplay muted loop playsinline id="bg-video">
     <source src="https://www.videvo.net/videvo_files/converted/2016_08/preview/160721_06_Summer_4k_029.mp491551.webm" type="video/webm">
   </video>
 
-  <!-- HEADER -->
   <header>
     <h1>Zaki</h1>
-    <p class="subtitle">הבינה שתגרום לביטוח לאומי להזיע.</p>
+    <p class="subtitle">הבינה שמחזירה את האנושיות למידע.</p>
     <div class="cta">
       <a href="#demo">שאל שאלה</a>
-      <a href="#download">הורד את האפליקציה</a>
+      <a href="#download">הורד את Zaki</a>
     </div>
   </header>
 
-  <!-- DEMO -->
   <section id="demo">
     <h2>דמו חי – שאל שאלה:</h2>
     <div class="demo">
@@ -44,7 +203,6 @@
     </div>
   </section>
 
-  <!-- DOWNLOAD -->
   <section id="download">
     <h2>הורד את Zaki – תן לבינה לעבוד בשבילך</h2>
     <p>האפליקציה זמינה עכשיו בחנויות:</p>
@@ -58,37 +216,32 @@
     </div>
   </section>
 
-  <!-- תוכן -->
   <section>
-    <h2>יותר מעוזר. חבר.</h2>
-    <p>Zaki הוא לא עוד צ'אט בינה. הוא מראה שהמערכת לא חייבת להיות מסובכת. הוא כאן להזכיר – שאתה לא צריך להבין את כל הזכויות. רק שמישהו יבין אותך.</p>
+    <h2>יותר מעוזר – חבר.</h2>
+    <p>Zaki לא רק עונה. הוא מבין. הוא נבנה עבורך, לא נגדך. תשאל הכל – קבל תשובות שמבוססות אמת ולא בירוקרטיה.</p>
   </section>
 
   <section>
-    <h2>האנושיות חוזרת לטפסים</h2>
-    <p>מתי בפעם האחרונה מילאת טופס והרגשת שמישהו באמת מקשיב? ב־Zaki, כל שאלה היא הזדמנות – לא תשובה אוטומטית. אלא תשובה שמתאימה לך. לא לפרוטוקול.</p>
+    <h2>האנושיות חוזרת לטפסים.</h2>
+    <p>מילאת פעם טופס והרגשת שבאמת מקשיבים? כל שאלה ב־Zaki היא הזדמנות לדיוק. לא לפי פרוטוקול – אלא לפי החיים שלך.</p>
   </section>
 
   <section>
     <h2>מי אנחנו?</h2>
-    <p>אנחנו קבוצה של אנשים, לא מנגנון. יזמים, עורכי דין, מתכנתי על ואנשי רוח – שביחד החליטו להחזיר את הכוח לאזרח. לא על ידי הפגנות – אלא דרך שורה של קוד שעובדת בשבילך.</p>
+    <p>אנשים. לא מנגנון. יזמים, עורכי דין, מתכנתים, אנשי טיפול – כולם באותה שליחות: להנגיש אמת. בצורה פשוטה, ברורה, אנושית.</p>
   </section>
 
   <section>
-    <h2>לא צריך לדעת הכול. רק להכיר את Zaki.</h2>
-    <p>האפליקציה פתוחה. השאלות חופשיות. והתשובות מדויקות. Zaki לא שואל למה אתה כאן – הוא רק בודק מה עוד מגיע לך.</p>
+    <h2>לא צריך לדעת הכל – רק להכיר את Zaki.</h2>
+    <p>זכויות לא צריכות להיות סוד. Zaki פותח בפניך שער לשקיפות. והכל מתחיל בשאלה אחת.</p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>ליצירת קשר או שיתוף פעולה: <a href="mailto:eliber.dev@gmail.com">eliber.dev@gmail.com</a></p>
-    <div class="social">
-      <a href="#">YouTube</a>
-    </div>
+    <p><a href="#">YouTube</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
     <p>Zaki – זכויות. שקוף. פשוט.</p>
   </footer>
 
-  <!-- SCRIPT -->
   <script>
     const questionInput = document.getElementById("questionInput");
     const responseBox = document.getElementById("responseBox");
@@ -101,11 +254,11 @@
         if (val.includes("נכה")) {
           answer = "קצבה, נקודות זיכוי, ואולי גם פטור מהבוס. רוצה לדעת בדיוק?";
         } else if (val.includes("ילד")) {
-          answer = "תמיכה חינוכית, סייעת, ואולי גם טיפולים על חשבון המדינה.";
+          answer = "תמיכה חינוכית, סייעת, טיפולים – יש למה לצפות.";
         } else if (val.includes("דיור")) {
-          answer = "סיוע בשכר דירה, הנחה בארנונה, והזדמנות להרגיש בבית.";
+          answer = "סיוע בשכר דירה, הנחה בארנונה, ואולי אפילו עוד.";
         } else {
-          answer = "שאלה טובה! אבל למה לא לנסות את Zaki בעצמו?";
+          answer = "שאלה טובה! בוא נגלה יחד בתוך האפליקציה.";
         }
 
         responseBox.innerHTML = `
@@ -113,7 +266,7 @@
           <a href="https://play.google.com/store/apps/details?id=com.example.zaki" target="_blank"
              style="display:inline-block; margin-top:1rem; padding:0.6rem 1.2rem; background:#10A37F; color:#0d1117;
                     border-radius:8px; font-weight:bold; text-decoration:none;">
-            הורד את Zaki
+            הורד את Zaki, נשמה
           </a>
         `;
       }
