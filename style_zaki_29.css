@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Assistant', sans-serif;
+  background-color: #0a0c10;
+  color: #e6edf3;
+  direction: rtl;
+  text-align: center;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* רקע חי עם אפקט */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 40%, rgba(0, 212, 255, 0.08), transparent 60%);
+  z-index: 0;
+}
+
+header {
+  padding: 6rem 2rem 3rem;
+  background: linear-gradient(180deg, #0a0c10 0%, #1a1c22 100%);
+  position: relative;
+  z-index: 2;
+}
+
+/* לוגו */
+.logo {
+  width: 130px;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #10A37F;
+  text-shadow: 0 0 20px rgba(16,163,127,0.5);
+  animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+  0% { letter-spacing: 1px; }
+  50% { letter-spacing: 3px; }
+  100% { letter-spacing: 1px; }
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  color: #c9d1d9;
+}
+
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta a {
+  background: #161b22;
+  padding: 0.9rem 1.8rem;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  color: #f0f6fc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.cta a:hover {
+  background: #10A37F;
+  color: #0d1117;
+  transform: scale(1.06);
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+section:nth-of-type(2) { animation-delay: 0.2s; }
+section:nth-of-type(3) { animation-delay: 0.4s; }
+section:nth-of-type(4) { animation-delay: 0.6s; }
+section:nth-of-type(5) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  color: #00d4ff;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #c9d1d9;
+  margin-bottom: 2rem;
+}
+
+.demo input {
+  padding: 0.9rem;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  border: none;
+  background: #161b22;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  box-shadow: 0 0 6px rgba(0, 212, 255, 0.1);
+}
+
+.response {
+  font-style: normal;
+  color: #58d3af;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.store-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.store-buttons img {
+  height: 60px;
+  transition: transform 0.2s ease;
+}
+
+.store-buttons img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  padding: 4rem 1rem;
+  background-color: #0a0c10;
+  color: #8b949e;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.social a {
+  color: #10A37F;
+  margin: 0 0.4rem;
+  text-decoration: none;
+}
+
+.social a:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: #00d4ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #66e5ff;
+}
+
+/* מובייל */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .cta {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .store-buttons img {
+    height: 50px;
+  }
+}
