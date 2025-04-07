@@ -32,11 +32,20 @@ header {
   z-index: 2;
 }
 
-/* לוגו */
 .logo {
-  width: 130px;
+  width: 120px;
+  max-width: 30%;
+  height: auto;
   margin-bottom: 1.5rem;
 }
+
+/* במובייל */
+@media (max-width: 768px) {
+  .logo {
+    width: 90px;
+  }
+}
+
 
 h1 {
   font-size: 3rem;
