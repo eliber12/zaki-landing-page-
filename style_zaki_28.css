@@ -16,7 +16,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ׳¨׳§׳¢ ׳—׳™ ׳¢׳ ׳©׳›׳‘׳•׳× */
+/* רקע חי עם אפקט */
 body::before {
   content: '';
   position: fixed;
@@ -30,6 +30,12 @@ header {
   background: linear-gradient(180deg, #0a0c10 0%, #1a1c22 100%);
   position: relative;
   z-index: 2;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1.5rem;
 }
 
 h1 {
@@ -83,6 +89,21 @@ section {
   text-align: center;
   position: relative;
   z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+section:nth-of-type(2) { animation-delay: 0.2s; }
+section:nth-of-type(3) { animation-delay: 0.4s; }
+section:nth-of-type(4) { animation-delay: 0.6s; }
+section:nth-of-type(5) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h2 {
@@ -133,6 +154,7 @@ p {
   height: 60px;
   transition: transform 0.2s ease;
 }
+
 .store-buttons img:hover {
   transform: scale(1.05);
 }
@@ -166,26 +188,11 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ׳׳ ׳™׳׳¦׳™׳™׳× ׳”׳•׳₪׳¢׳” */
-section {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-}
-section:nth-of-type(2) { animation-delay: 0.2s; }
-section:nth-of-type(3) { animation-delay: 0.4s; }
-section:nth-of-type(4) { animation-delay: 0.6s; }
-section:nth-of-type(5) { animation-delay: 0.8s; }
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ׳׳•׳‘׳™׳™׳ */
+/* רספונסיביות מובייל */
 @media (max-width: 768px) {
+  .logo {
+    width: 90px;
+  }
   h1 {
     font-size: 2rem;
   }
@@ -197,5 +204,3 @@ section:nth-of-type(5) { animation-delay: 0.8s; }
     height: 50px;
   }
 }
-
-
