@@ -39,14 +39,6 @@ header {
   margin-bottom: 1.5rem;
 }
 
-/* במובייל */
-@media (max-width: 768px) {
-  .logo {
-    width: 90px;
-  }
-}
-
-
 h1 {
   font-size: 3rem;
   color: #10A37F;
@@ -198,6 +190,9 @@ a:hover {
 
 /* מובייל */
 @media (max-width: 768px) {
+  .logo {
+    width: 90px;
+  }
   h1 {
     font-size: 2rem;
   }
