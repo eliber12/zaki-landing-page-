@@ -1,187 +1,22 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zaki – לא רק סוכן, חבר</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="icon" href="favicon.ico"/>
-  <meta name="theme-color" content="#0d1117"/>
-  <meta property="og:title" content="Zaki – הבינה שתשאל בשבילך"/>
-  <meta property="og:description" content="Zaki משנה את כללי המשחק. AI חברתי. מלווה אישי. אמת זמינה."/>
-  <meta property="og:image" content="https://zaki-landing-page.vercel.app/og_image.png"/>
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      font-family: 'Assistant', sans-serif;
-      background-color: #0d1117;
-      color: #f0f6fc;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-      direction: rtl;
-      text-align: center;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(45deg, rgba(16,163,127,0.05), transparent 70%);
-      z-index: 1;
-    }
-
-    #bg-video {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: 0;
-      object-fit: cover;
-      filter: brightness(0.15);
-    }
-
-    header {
-      position: relative;
-      z-index: 2;
-      padding: 6rem 2rem 3rem;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: #10A37F;
-      text-shadow: 0 0 20px rgba(16,163,127,0.5);
-      animation: pulse 4s infinite;
-    }
-
-    @keyframes pulse {
-      0% { letter-spacing: 1px; }
-      50% { letter-spacing: 3px; }
-      100% { letter-spacing: 1px; }
-    }
-
-    .subtitle {
-      font-size: 1.2rem;
-      color: #c9d1d9;
-      margin-top: 1rem;
-    }
-
-    .cta {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .cta a {
-      background: #161b22;
-      padding: 0.8rem 1.4rem;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      color: #f0f6fc;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s ease;
-    }
-
-    .cta a:hover {
-      background: #10A37F;
-      color: #0d1117;
-      transform: scale(1.05);
-    }
-
-    section {
-      position: relative;
-      z-index: 2;
-      padding: 4rem 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      color: #00d4ff;
-      margin-bottom: 1.2rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #c9d1d9;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-
-    .demo input {
-      padding: 0.9rem;
-      width: 90%;
-      max-width: 500px;
-      border-radius: 8px;
-      border: none;
-      background: #161b22;
-      color: #fff;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      box-shadow: 0 0 8px rgba(0, 212, 255, 0.1);
-    }
-
-    .response {
-      font-size: 1.1rem;
-      color: #58d3af;
-      margin-top: 1rem;
-    }
-
-    .store-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .store-buttons img {
-      height: 60px;
-      transition: transform 0.3s ease;
-    }
-
-    .store-buttons img:hover {
-      transform: scale(1.07);
-    }
-
-    footer {
-      padding: 3rem 1rem;
-      background-color: #0a0c10;
-      font-size: 0.9rem;
-      color: #8b949e;
-    }
-
-    .social a {
-      color: #10A37F;
-      margin: 0 0.4rem;
-      text-decoration: none;
-    }
-
-    .social a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.5rem; }
-      .cta { flex-direction: column; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+  <meta name="theme-color" content="#0d1117">
+  <meta property="og:title" content="Zaki – הבינה שתשאל בשבילך">
+  <meta property="og:description" content="Zaki משנה את כללי המשחק. AI חברתי. מלווה אישי. אמת זמינה.">
+  <meta property="og:image" content="https://zaki-landing-page.vercel.app/og_image.png">
 </head>
 
 <body>
-  <video autoplay muted loop playsinline id="bg-video">
-    <source src="https://www.videvo.net/videvo_files/converted/2016_08/preview/160721_06_Summer_4k_029.mp491551.webm" type="video/webm">
-    הדפדפן שלך לא תומך בווידאו רקע.
-  </video>
-
   <header>
+    <img src="zaki_logo_main.png" alt="Zaki Logo" class="logo">
     <h1>Zaki</h1>
     <p class="subtitle">Zaki סורק עבורך אלפי מקורות – ונותן תשובה ברורה במקום.</p>
     <div class="cta">
@@ -193,7 +28,7 @@
   <section id="demo">
     <h2>שאל שאלה:</h2>
     <div class="demo">
-      <input id="questionInput" type="text" placeholder="מה מגיע לי אם אני עובד נכה?" />
+      <input id="questionInput" type="text" placeholder="מה מגיע לי אם אני עובד נכה?">
       <div class="response" id="responseBox"></div>
     </div>
   </section>
@@ -203,32 +38,32 @@
     <p>האפליקציה זמינה עכשיו בחנויות:</p>
     <div class="store-buttons">
       <a href="https://play.google.com/store/apps/details?id=com.example.zaki" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
       </a>
       <a href="https://apps.apple.com/app/id1234567890" target="_blank">
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"/>
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
       </a>
     </div>
   </section>
 
   <section>
     <h2>יותר מעוזר. חבר.</h2>
-    <p>Zaki הוא לא עוד צ'אט בינה. הוא מראה שהמערכת לא חייבת להיות מסובכת. הוא כאן להזכיר – שאתה לא צריך להבין את כל הזכויות. רק שמישהו יבין אותך.</p>
+    <p>Zaki הוא לא עוד צ'אט בינה. הוא כאן להזכיר – שאתה לא צריך להבין את כל הזכויות. רק שמישהו יבין אותך.</p>
   </section>
 
   <section>
     <h2>האנושיות חוזרת לטפסים</h2>
-    <p>מתי בפעם האחרונה מילאת טופס והרגשת שמישהו באמת מקשיב? ב־Zaki, כל שאלה היא הזדמנות – לא תשובה אוטומטית. אלא תשובה שמתאימה לך. לא לפרוטוקול.</p>
+    <p>ב־Zaki, כל שאלה היא הזדמנות – לא תשובה אוטומטית אלא תשובה אמיתית שמתאימה לך, לא לפרוטוקול.</p>
   </section>
 
   <section>
     <h2>מי אנחנו?</h2>
-    <p>אנחנו קבוצה של אנשים, לא מנגנון. יזמים, עורכי דין, מתכנתי על ואנשי רוח – שביחד החליטו להחזיר את הכוח לאזרח. לא על ידי הפגנות – אלא דרך שורת קוד שעובדת בשבילך.</p>
+    <p>אנחנו יזמים, עורכי דין, מתכנתי על ואנשי רוח – שהחליטו להחזיר את הכוח לאזרח דרך קוד שעובד בשבילו.</p>
   </section>
 
   <section>
     <h2>לא צריך לדעת הכל. רק להכיר את Zaki.</h2>
-    <p>האפליקציה פתוחה. השאלות חופשיות. והתשובות מדויקות. Zaki לא שואל למה אתה כאן – הוא רק בודק מה עוד מגיע לך.</p>
+    <p>האפליקציה פתוחה. השאלות חופשיות. והתשובות מדויקות. Zaki כאן לבדוק מה עוד מגיע לך.</p>
   </section>
 
   <footer>
@@ -249,7 +84,7 @@
         let answer = "";
 
         if (val.includes("נכה")) {
-          answer = "קצבה, נקודות זיכוי, פטור ממס, ליווי תעסוקתי. רוצה לדעת בדיוק?";
+          answer = "קצבה, נקודות זיכוי, פטור ממס, ליווי תעסוקתי.";
         } else if (val.includes("ילד")) {
           answer = "תמיכה חינוכית, סייעת, קצבת ילדים, הנחות ברווחה.";
         } else if (val.includes("דיור")) {
@@ -263,7 +98,7 @@
           <a href="https://play.google.com/store/apps/details?id=com.example.zaki" target="_blank"
              style="display:inline-block; margin-top:1rem; padding:0.6rem 1.2rem; background:#10A37F; color:#0d1117;
                     border-radius:8px; font-weight:bold; text-decoration:none;">
-            הורד את Zaki, נשמה
+            הורד את Zaki
           </a>
         `;
       }
